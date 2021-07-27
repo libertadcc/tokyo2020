@@ -38,7 +38,7 @@ const medalRenderer = {
                 }, {
                     value: 1,
                     color: '#CD7F32'
-                },{
+                }, {
                     value: 4,
                     color: '#D3D3D3'
                 }, {
@@ -55,24 +55,29 @@ const medalLayer = new FeatureLayer({
     renderer: medalRenderer,
     popupTemplate: {
         title: 'Country: {ADMIN}',
-        content: [{
-            type: 'fields',
-            fieldInfos: [{
-                fieldName: "totalMedal",
-                label: '🏅 Total'
+        content: [
+            {
+                type: "fields",
+                fieldInfos: [{
+                    fieldName: "totalMedal",
+                    label: '🏅 Total'
+                }, {
+                    fieldName: 'medal_gold',
+                    label: '🥇 Gold'
+
+                }, {
+                    fieldName: 'medal_silver',
+                    label: '🥈 Silver'
+
+                }, {
+                    fieldName: 'medal_bronze',
+                    label: '🥉 Bronze'
+                }]
             },{
-                fieldName: 'medal_gold',
-                label: '🥇 Gold'
-            
-            },{
-                fieldName: 'medal_silver',
-                label: '🥈 Silver'
-           
-            },{
-                fieldName: 'medal_bronze',
-                label: '🥉 Bronze'
-            }]
-        }]
+                type: 'text',
+                text: '<a href="https://olympics.com/tokyo-2020/olympic-games/es/resultados/todos-los-deportes/clasificacion-por-medallas.htm" target="_blank">More info</a>'
+            }
+        ]
     }
 });
 
