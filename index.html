@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,9 @@
     <script nomodule="" src="https://js.arcgis.com/calcite-components/1.0.0-beta.52/calcite.js"></script>
 
     <style>
-        html, body, #viewDiv{
+        html,
+        body,
+        #viewDiv {
             margin: 0;
             padding: 0px;
             width: 100%;
@@ -27,39 +30,39 @@
         }
 
         #wrapperTitle {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            #title {
-                text-align: center;
-            }
-            #toISS {
-                position: relative;
-                bottom: 81px;
-                left: 20px;
-            }
-            .icons {
-                margin-left: 30px;
-            }
-            .icon {
-                cursor: pointer;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        
+        #title {
+            text-align: center;
+        }
+
+        #toISS {
+            position: relative;
+            bottom: 81px;
+            left: 20px;
+        }
+
+        .icon {
+            margin: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
     <div id="wrapperTitle">
         <h1 id="title">Olympic Medal Count | Tokyo 2020</h1>
-        <div class="icons">
-            <calcite-icon class="icon" icon="information" id="infoIcon"></calcite-icon>
-        </div>
+        <calcite-icon class="icon" icon="information" id="infoIcon"></calcite-icon>
+
         <calcite-modal aria-labelledby="modal-title" id="modalInfo">
-            <div slot="header" >Olympic Medal Count</div>
+            <div slot="header">Olympic Medal Count</div>
             <div slot="content">
-                The data is extracted from the <a target="_blank" href="https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm">official page of the Olympic games
+                The data is extracted from the <a target="_blank"
+                    href="https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm">official
+                    page of the Olympic games
                 </a>.
                 <br>
                 They are update every 24 hours.
@@ -69,4 +72,5 @@
     </div>
     <div id="viewDiv"></div>
 </body>
+
 </html>
