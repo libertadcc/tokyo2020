@@ -13,16 +13,60 @@
     <link rel="icon" type="image/png" href="logo.png" sizes="16x16">
     <script src="index.js" type="module"></script>
 
+    <!-- Calcite -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/1.0.0-beta.52/calcite.esm.js"></script>
+    <script nomodule="" src="https://js.arcgis.com/calcite-components/1.0.0-beta.52/calcite.js"></script>
+
     <style>
-        html, body, #viewDiv {
-            width: 100%;
-            height: 100%;
-            padding: 0;
+        html, body, #viewDiv{
             margin: 0;
+            padding: 0px;
+            width: 100%;
+            height: 95%;
+            box-sizing: border-box;
         }
+
+        #wrapperTitle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            #title {
+                text-align: center;
+            }
+            #toISS {
+                position: relative;
+                bottom: 81px;
+                left: 20px;
+            }
+            .icons {
+                margin-left: 30px;
+            }
+            .icon {
+                cursor: pointer;
+            }
+
+        
     </style>
 </head>
 <body>
+    <div id="wrapperTitle">
+        <h1 id="title">Olympic Medal Count | Tokyo 2020</h1>
+        <div class="icons">
+            <calcite-icon class="icon" icon="information" id="infoIcon"></calcite-icon>
+        </div>
+        <calcite-modal aria-labelledby="modal-title" id="modalInfo">
+            <div slot="header" >Olympic Medal Count</div>
+            <div slot="content">
+                The data is extracted from the <a target="_blank" href="https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm">official page of the Olympic games
+                </a>.
+                <br>
+                They are update every 24 hours.
+                <br>
+            </div>
+        </calcite-modal>
+    </div>
     <div id="viewDiv"></div>
 </body>
 </html>

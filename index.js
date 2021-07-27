@@ -73,9 +73,9 @@ const medalLayer = new FeatureLayer({
                     fieldName: 'medal_bronze',
                     label: '🥉 Bronze'
                 }]
-            },{
+            }, {
                 type: 'text',
-                text: '<a href="https://olympics.com/tokyo-2020/olympic-games/es/resultados/todos-los-deportes/clasificacion-por-medallas.htm" target="_blank">More info</a>'
+                text: '<a href="https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm" target="_blank">More info</a>'
             }
         ]
     }
@@ -93,3 +93,5 @@ const legendWidget = new Legend({
 });
 
 view.ui.add(legendWidget, 'bottom-right');
+
+document.getElementById("infoIcon").addEventListener("click", () => document.getElementById('modalInfo').active = true);
