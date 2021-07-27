@@ -2,6 +2,7 @@ import Map from 'https://js.arcgis.com/4.19/@arcgis/core/Map.js'
 import MapView from "https://js.arcgis.com/4.19/@arcgis/core/views/MapView.js";
 import FeatureLayer from "https://js.arcgis.com/4.19/@arcgis/core/layers/FeatureLayer.js";
 import Legend from "https://js.arcgis.com/4.19/@arcgis/core/widgets/Legend.js";
+import Expand from "https://js.arcgis.com/4.19/@arcgis/core/widgets/Expand.js";
 import esriConfig from "https://js.arcgis.com/4.19/@arcgis/core/config.js";
 
 esriConfig.apiKey = "AAPK910bc52162d04535b4b2e399d655b842-B8-L-B-bSHMrLN2KVLmjffN-wrL_S3hXWvzpGoUceNidwHU5YxKxYF9dcKDp9xH";
@@ -81,7 +82,6 @@ const medalLayer = new FeatureLayer({
     }
 });
 
-
 map.addMany([medalLayer]);
 
 const legendWidget = new Legend({
@@ -89,9 +89,16 @@ const legendWidget = new Legend({
     layerInfos: [{
         layer: medalLayer,
         title: 'Countries'
-    }]
+    }],
+    container: document.createElement('div')
 });
 
-view.ui.add(legendWidget, 'bottom-right');
+var legendExpand = new Expand({
+    view: view,
+    content: legendWidget
+});
+
+view.ui.add(legendExpand, "bottom-right");
+
 
 document.getElementById("infoIcon").addEventListener("click", () => document.getElementById('modalInfo').active = true);
