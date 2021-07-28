@@ -38,13 +38,13 @@ const medalRenderer = {
                     color: '#3a4d6b'
                 }, {
                     value: 1,
-                    color: '#CD7F32'
+                    color: '#AD8A56'
                 }, {
-                    value: 4,
-                    color: '#D3D3D3'
+                    value: 5,
+                    color: '#B4B4B4'
                 }, {
-                    value: 22,
-                    color: '#FFD700'
+                    value: 25,
+                    color: '#AF9500'
                 }
             ]
         }
@@ -61,7 +61,7 @@ const medalLayer = new FeatureLayer({
                 type: "fields",
                 fieldInfos: [{
                     fieldName: "totalMedal",
-                    label: '🏅 Total'
+                    label: '<b>🏅 Total</b>'
                 }, {
                     fieldName: 'medal_gold',
                     label: '🥇 Gold'
