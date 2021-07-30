@@ -19,7 +19,39 @@ const view = new MapView({
     zoom: 3
 });
 
-const medalRenderer = {
+// const medalRenderer = {
+//     type: 'simple',
+//     symbol: {
+//         type: 'simple-fill',
+//         outline: {
+//             color: 'white',
+//             width: '1px'
+//         }
+//     },
+//     visualVariables: [
+//         {
+//             type: 'color',
+//             field: 'totalMedal',
+//             stops: [
+//                 {
+//                     value: 0,
+//                     color: '#3a4d6b'
+//                 }, {
+//                     value: 1,
+//                     color: '#AD8A56'
+//                 }, {
+//                     value: 5,
+//                     color: '#B4B4B4'
+//                 }, {
+//                     value: 25,
+//                     color: '#AF9500'
+//                 }
+//             ]
+//         }
+//     ]
+// };
+
+const iconRenderer = {
     type: 'simple',
     symbol: {
         type: 'simple-fill',
@@ -40,20 +72,21 @@ const medalRenderer = {
                     value: 1,
                     color: '#AD8A56'
                 }, {
-                    value: 5,
+                    value: 18,
                     color: '#B4B4B4'
                 }, {
-                    value: 25,
+                    value: 35,
                     color: '#AF9500'
                 }
             ]
         }
     ]
-};
+}
 
 const medalLayer = new FeatureLayer({
     url: 'https://services5.arcgis.com/hZQQbQb2B2y1Wd2F/arcgis/rest/services/countries/FeatureServer/0',
-    renderer: medalRenderer,
+    // renderer: medalRenderer,
+    renderer: iconRenderer,
     popupTemplate: {
         title: 'Country: {ADMIN}',
         content: [
